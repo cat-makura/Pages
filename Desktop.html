@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仮想OS</title>
+    <!-- CSSファイルのリンク -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="desktop">
+        <div class="icon" onclick="openApp('notepad')">メモ帳</div>
+        <div class="icon" onclick="openApp('calculator')">電卓</div>
+    </div>
+
+    <!-- メモ帳ウィンドウ -->
+    <div id="notepad" class="window" style="display: none;">
+        <div class="title-bar">
+            <span>メモ帳</span>
+            <button onclick="closeApp('notepad')">X</button>
+        </div>
+        <textarea></textarea>
+    </div>
+
+    <!-- 電卓ウィンドウ -->
+    <div id="calculator" class="window" style="display: none;">
+        <div class="title-bar">
+            <span>電卓</span>
+            <button onclick="closeApp('calculator')">X</button>
+        </div>
+        <div class="calculator-body">
+            <input type="text" id="calc-display" disabled>
+            <div>
+                <button onclick="pressKey('1')">1</button>
+                <button onclick="pressKey('2')">2</button>
+                <button onclick="pressKey('+')">+</button>
+                <button onclick="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScriptファイルのリンク -->
+    <script src="script.js"></script>
+</body>
+</html>
